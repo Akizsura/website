@@ -1,4 +1,6 @@
 ﻿<!DOCTYPE html>
+@using Microsoft.AspNet.Identity
+
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -17,11 +19,16 @@
                 <ul class="nav navbar-nav mr-auto">
                     <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
                 </ul>
-
+                @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                {
                 <ul class="nav navbar-nav navbar-right">
                     <li class="nav-item"><a href="/Account/Register" class="nav-link">Register</a></li>
                     <li class="nav-item"><a href="/Account/Login" class="nav-link">Login</a></li>
                 </ul>
+                } else
+                {
+                    
+                }
 
             </div>
         </div>
